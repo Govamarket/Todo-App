@@ -1,0 +1,61 @@
+html, body{
+    margin: 0px auto;
+    width: 50%;
+    box-sizing: border-box;
+    font: optional;
+    background: darkblue;
+}
+
+
+.header{
+    /* text-align: center; */
+    color: #fff;
+}
+.container{
+    background: darkblue;
+    padding: 20px;
+    height: 0px auto;
+}
+
+#textItem {
+    width: 60%;
+    height: 30px;
+    text-align: center;
+    outline: 0px;
+    border: 0px;
+}
+
+#clickBtn{
+    width: 30px;
+    height: 30px;
+    outline: 0px;
+    border: 0px;
+}
+
+.content-value{
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: auto;
+    border: 2px 2px solid #ccc;
+    align-items: center;
+    color: #fff;
+}
+
+#delete, #edit{
+    height: 20px;
+}
+.paragraph{
+    margin: 10px;
+}
+
+.deleteItem{background: red; color: #fff;}
+.editItem{background: blue; color: #fff;}
+.btn{background: blue; color: #fff; padding: 5px 10px; cursor: pointer;}
+
+
+
+
