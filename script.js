@@ -1,46 +1,53 @@
-let buttonBtn = document.querySelector('#clickBtn');
+let buttonBtn = document.querySelector("#clickBtn");
 
 taskListArray = [];
 
+function storeData() {
+  // debugger;
+  let inputItem = document.querySelector("#textItem").value;
+  let itemList = document.querySelector(".items");
 
-function storeData () {
-    debugger;
-    let inputItem = document.querySelector('#textItem').value.trim(); 
-    let itemList = document.querySelector('.items');
+  let todoObject = {
+    taskId: taskListArray.length + 1,
+    inputItem: inputItem,
+  };
 
-    let todoObject = {
-        taskId: taskListArray.length + 1,
-        inputItem: inputItem,
-    }
-
-    let newItem = document.createElement('p');
+  if (inputItem === "") {
+    alert("Add item");
+  } else {
+    let newItem = document.createElement("li");
     itemList.appendChild(newItem);
 
-    newItem.textContent = inputItem  b ;
+    newItem.textContent = inputItem;
 
-    newItem.classList.add('paragraph-styling');
+    newItem.classList.add("paragraph-styling");
+  }
 
+  taskListArray.push(todoObject);
+  console.log(taskListArray);
 
-    taskListArray.push(todoObject);
-    console.log(taskListArray);
-
-    renderTask();
+  renderTask();
 }
 
-function renderTask () {
+function renderTask() {
+  taskListArray.forEach((item, index) => {
+    const li = document.createElement('li');
+    li.className = "item";
 
-    taskListArray.forEach((item, index) => {
-       
-    });
-  
+    const textSpan = document.createElement("span")
+    textSpan.textContent = item;
 
+    let editItem = document.createElement('button')
+    editItem.textContent = "edit";
+    editItem.classList.add('editItem');
+
+
+    let deleteItem = document.createElement('delete')
+    deleteItem.textContent = "delete";
+    deleteItem.classList.add(deleteItem);
+  });
 }
 
-buttonBtn.addEventListener('click', storeData);
+buttonBtn.addEventListener("click", storeData);
 
-//lets create an object method for the data 
-
-
-
-
-    
+//lets create an object method for the data

@@ -38,10 +38,6 @@ html, body{
 }
 
 .items {
-    display: grid;
-    grid-template-columns: auto;
-    border: 2px 2px solid #ccc;
-    align-items: center;
     color: #fff;
 }
 
@@ -51,6 +47,8 @@ html, body{
 .paragraph{
     margin: 10px;
 }
+
+.item{display: flex; align-items: center; gap: 10px; margin: 5px 0;}
 
 .deleteItem{background: red; color: #fff;}
 .editItem{background: blue; color: #fff;}
