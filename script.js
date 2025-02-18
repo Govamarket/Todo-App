@@ -25,7 +25,7 @@ function renderTask() {
 
     //Delete button
     let deleteBtn = document.createElement("button");
-    deleteBtn.textContent = "delete";
+    deleteBtn.textContent = "Remove";
     deleteBtn.className = "deleteBtn";
     deleteBtn.onclick = () => deleteItem(index);
 
@@ -68,3 +68,13 @@ function deleteItem(index) {
 buttonBtn.addEventListener("click", addItem);
 
 //lets create an object method for the data
+
+
+let userData = [
+  {id:1, firstName: 'clinton'},
+  {lastName: 'Gova'},
+  {middleName: 'Chidera'},
+]
+
+let dataSort = userData.find(item => item.id<1);
+console.log(dataSort);
