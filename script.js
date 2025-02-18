@@ -47,6 +47,7 @@ function addItem() {
   }
   taskListArray.push(value);
   inputItem.value = "";
+  console.log(taskListArray);
   renderTask();
 }
 

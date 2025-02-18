@@ -1,57 +1,64 @@
-html, body{
-    margin: 0px auto;
-    width: 50%;
-    box-sizing: border-box;
-    font: optional;
-    background: darkblue;
+html,
+body {
+  margin: 0px auto;
+  width: 50%;
+  box-sizing: border-box;
+  font: optional;
+  /* background: darkblue; */
 }
 
-
-.header{
-    /* text-align: center; */
-    color: #fff;
+.header {
+  color: #000;
 }
-.container{
-    background: darkblue;
-    padding: 20px;
-    height: 0px auto;
+.container {
+  background: darkblue;
+  padding: 20px;
+  height: 0px auto;
+  border-radius: 20px;
 }
 
 #textItem {
-    width: 60%;
-    height: 30px;
-    text-align: center;
-    outline: 0px;
-    border: 0px;
+  width: 60%;
+  height: 30px;
+  text-align: center;
+  outline: 0px;
+  border: 0px;
 }
 
-#clickBtn{
-    width: 30px;
-    height: 30px;
-    outline: 0px;
-    border: 0px;
+#clickBtn {
+  width: 30px;
+  height: 30px;
+  outline: 0px;
+  border: 0px;
 }
 
-.content-value{
-    margin: 0px auto;
-    padding: 0px;
+.content-value {
+  margin: 0px auto;
+  padding: 0px;
+}
+
+#delete,
+#edit {
+  align-items: center;
+  height: 20px;
 }
 
 .item {
-    color: #fff;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0;
+  place-content: inherit;
+  color: #fff;
 }
 
-#delete, #edit{
-    height: 20px;
+.deleteBtn {
+  background: red;
+  color: #fff;
 }
-
-
-.item{display: flex; align-items: center; gap: 10px; margin: 5px 0; }
-
-.deleteBtn{background: red; color: #fff;}
-.editBtn{background: blue; color: #fff;}
-.btn{background: blue; color: #fff; padding: 5px 10px; cursor: pointer;}
-
-
-
+.editBtn {
+  background: blue;
+  color: #fff;
+}
 
