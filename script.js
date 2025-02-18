@@ -1,53 +1,69 @@
+let inputItem = document.querySelector("#textItem");
 let buttonBtn = document.querySelector("#clickBtn");
+let itemList = document.querySelector("#items")
 
 taskListArray = [];
 
-function storeData() {
-  // debugger;
-  let inputItem = document.querySelector("#textItem").value;
-  let itemList = document.querySelector(".items");
 
-  let todoObject = {
-    taskId: taskListArray.length + 1,
-    inputItem: inputItem,
-  };
+function renderTask() {
+  //clear existing list ite
+  itemList.innerHTML = "";
+  //creating a new list structure
+  taskListArray.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.className = "item"; //combine classes
 
-  if (inputItem === "") {
-    alert("Add item");
-  } else {
-    let newItem = document.createElement("li");
-    itemList.appendChild(newItem);
+    //Task text
+    const textSpan = document.createElement("span");
+    textSpan.textContent = item;
 
-    newItem.textContent = inputItem;
+    //Edit  button
+    let editBtn = document.createElement("button");
+    editBtn.textContent = "edit";
+    editBtn.className = "editBtn";
+    editBtn.onclick = () => editItem(index);
 
-    newItem.classList.add("paragraph-styling");
+    //Delete button
+    let deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "delete";
+    deleteBtn.className = "deleteBtn";
+    deleteBtn.onclick = () => deleteItem(index);
+
+    //Assemble Elements
+    li.appendChild(textSpan);
+    li.appendChild(editBtn);
+    li.appendChild(deleteBtn);
+    itemList.appendChild(li);
+  });
+};
+
+// function editItem(index) {
+
+function addItem() {
+  let value = inputItem.value;
+  if (value === "") {
+    alert('Please enter an item');
+    return;
   }
-
-  taskListArray.push(todoObject);
-  console.log(taskListArray);
-
+  taskListArray.push(value);
+  inputItem.value = "";
   renderTask();
 }
 
-function renderTask() {
-  taskListArray.forEach((item, index) => {
-    const li = document.createElement('li');
-    li.className = "item";
-
-    const textSpan = document.createElement("span")
-    textSpan.textContent = item;
-
-    let editItem = document.createElement('button')
-    editItem.textContent = "edit";
-    editItem.classList.add('editItem');
-
-
-    let deleteItem = document.createElement('delete')
-    deleteItem.textContent = "delete";
-    deleteItem.classList.add(deleteItem);
-  });
+function editItem(index) {
+    const newText = prompt("Edit item:", taskListArray[index]);
+    if (newText !== null && newText.trim() !== "") {
+      taskListArray[index] = newText.trim();
+      renderTask();
+    }
 }
 
-buttonBtn.addEventListener("click", storeData);
+// }
+function deleteItem(index) {
+  taskListArray.splice(index, 1);
+  renderTask();
+}
+
+buttonBtn.addEventListener("click", addItem);
 
 //lets create an object method for the data

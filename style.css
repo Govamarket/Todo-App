@@ -37,21 +37,19 @@ html, body{
     padding: 0px;
 }
 
-.items {
+.item {
     color: #fff;
 }
 
 #delete, #edit{
     height: 20px;
 }
-.paragraph{
-    margin: 10px;
-}
 
-.item{display: flex; align-items: center; gap: 10px; margin: 5px 0;}
 
-.deleteItem{background: red; color: #fff;}
-.editItem{background: blue; color: #fff;}
+.item{display: flex; align-items: center; gap: 10px; margin: 5px 0; }
+
+.deleteBtn{background: red; color: #fff;}
+.editBtn{background: blue; color: #fff;}
 .btn{background: blue; color: #fff; padding: 5px 10px; cursor: pointer;}
 
 
